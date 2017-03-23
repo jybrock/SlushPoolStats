@@ -5,7 +5,7 @@ import urllib2
 import json
 
 YOUR_SLUSH_API_KEY = ""
-SLUSH_STATS = 'https://mining.bitcoin.cz/accounts/profile/json/%s' % YOUR_SLUSH_API_KEY
+SLUSH_STATS = 'https://slushpool.com/accounts/profile/json/%s' % YOUR_SLUSH_API_KEY
 
 mining_stats_raw = urllib2.urlopen(SLUSH_STATS)
 mining_stats = json.load(mining_stats_raw)
@@ -16,7 +16,7 @@ confirmed = float(mining_stats['confirmed_reward'])
 
 totalearnings = unconfirmed+confirmed
 
-SLUSH_STATS_POOL = 'https://mining.bitcoin.cz/stats/json/'
+SLUSH_STATS_POOL = 'https://slushpool.com/stats/json/'
 
 s2_stats_raw = urllib2.urlopen(SLUSH_STATS_POOL)
 s2_stats = json.load(s2_stats_raw)
